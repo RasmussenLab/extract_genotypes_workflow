@@ -21,7 +21,7 @@ rule encode_genotypes:
 
 rule query_genotypes:
     input:
-        selected_pos="data/selected_positions/genotypes_chr{chrom}.tsv",
+        selected_pos="data/selected_genotypes/genotypes_chr{chrom}.tsv",
         vcf_file="/projects/ukbiobank-AUDIT/data/imputed_genotype/cur/vcf/ukb32683_imp_chr{chrom}_v3.vcf.gz"
     output:
         genotypes="data/extracted_genotypes/chr{chrom}/genotypes.txt",

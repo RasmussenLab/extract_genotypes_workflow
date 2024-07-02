@@ -3,8 +3,8 @@ from pathlib import Path
 import pandas as pd
 
 fname = 'data/combined_gwas.csv'  # adapt to file destination
-# fname = '../pan_ukbiobank_gwas/data/combined_gwas.csv'
-folder_out = 'extract_genotypes'
+fname = '../pan_ukbiobank_gwas/data/combined_gwas.csv'
+folder_out = 'data/selected_genotypes'
 
 TOP_N = 100
 
@@ -38,7 +38,7 @@ selected = (ranked_positions
             .index[:TOP_N]
             .to_frame()
             .sort_index())
-selected.to_csv(folder_out / 'chr_pos.tsv',
+selected.to_csv(folder_out / 'chr_pos_selected.tsv',
                 index=False,
                 header=False)
 
